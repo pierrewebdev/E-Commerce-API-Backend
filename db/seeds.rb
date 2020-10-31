@@ -39,7 +39,7 @@ end
 
 #seed some sample user and  product data
 
-Customer.create(name:"Patrick Pierre",email:"patrick.pierre000@gmail.com",password_digest:"abc123",address:"101 Board Fish Rd, Pennsylvania")
+Customer.create(name:"Patrick Pierre",email:"patrick.pierre000@gmail.com",password:"my_yute",address:"101 Board Fish Rd, Pennsylvania")
 
 Product.create!(parse_data)
 
