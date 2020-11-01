@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   #routes for customer controller
   post "/login", to: "customers#login"
+  get "/keep-logged-in", to: "customers#keep_logged_in"
 
   #routes for products controller
   get "/products", to: "products#index"
