@@ -26,20 +26,17 @@ ActiveRecord::Schema.define(version: 2020_10_28_195938) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "customer_id", null: false
-    t.bigint "product_id", null: false
     t.boolean "save_for_later"
     t.boolean "checked_out"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_carts_on_customer_id"
-    t.index ["product_id"], name: "index_carts_on_product_id"
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_10_28_195938) do
   create_table "payment_options", force: :cascade do |t|
     t.integer "card_number"
     t.string "billing_address"
+    t.string "shipping_address"
     t.datetime "expiration_date"
     t.bigint "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -66,6 +64,5 @@ ActiveRecord::Schema.define(version: 2020_10_28_195938) do
   add_foreign_key "cart_products", "carts"
   add_foreign_key "cart_products", "products"
   add_foreign_key "carts", "customers"
-  add_foreign_key "carts", "products"
   add_foreign_key "payment_options", "customers"
 end

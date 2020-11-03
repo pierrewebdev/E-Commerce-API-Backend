@@ -9,9 +9,13 @@
 require 'dotenv'
 Dotenv.load
 
+CartProduct.destroy_all
+Cart.destroy_all
 Customer.destroy_all
 Product.destroy_all
 
+CartProduct.reset_pk_sequence
+Cart.reset_pk_sequence
 Customer.reset_pk_sequence
 Product.reset_pk_sequence
 
@@ -39,7 +43,8 @@ end
 
 #seed some sample user and  product data
 
-Customer.create(name:"Patrick Pierre",email:"patrick.pierre000@gmail.com",password:"my_yute",address:"101 Board Fish Rd, Pennsylvania")
+Customer.create(name:"Patrick Pierre",email:"patrick.pierre000@gmail.com",password:"my_yute")
+Cart.create(customer:Customer.first, save_for_later:false, checked_out:false)
 
 Product.create!(parse_data)
 
