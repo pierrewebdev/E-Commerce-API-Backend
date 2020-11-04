@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'dotenv'
-Dotenv.load
 
 CartProduct.destroy_all
 Cart.destroy_all

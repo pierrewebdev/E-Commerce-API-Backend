@@ -14,6 +14,7 @@ class CartsController < ApplicationController
         Cart.find(cart_id).update(checked_out:true)
 
         new_cart = Cart.create(customer:@customer,checked_out:false,save_for_later:false)
-        render json:new_cart
+        past_carts = @customer.past_carts
+        render json:{new_cart:CartSerializer.new(new_cart),past_carts:past_carts}
     end
 end
