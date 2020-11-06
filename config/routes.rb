@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   #routes for cart_products controller
   post "/cart_products", to: "cart_products#create"
+  delete "delete-from-cart", to: "cart_products#delete"
 end

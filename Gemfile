@@ -60,3 +60,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #gem used to make better timestamps
 gem "activesupport"
+
+#gem to abstract process of using stripe api
+gem 'stripe'
