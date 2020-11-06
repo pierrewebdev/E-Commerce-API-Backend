@@ -46,4 +46,22 @@ Cart.create(customer:Customer.first, save_for_later:false, checked_out:false)
 
 Product.create!(parse_data)
 
+#some product reviews to test the output coming from the backend
+
+product_one_review1 = Review.create(
+    customer:Customer.first, 
+    product: Product.first,
+    headline: "I love this product!!!",
+    content: "This product was exactly what I needed in these trying times. This really helped me to step up my at home workouts and get a better workout than I would get in the gym. I would recommmend this to any one of my friends",
+    rating:5 
+)
+
+product_one_review2 = Review.create(
+    customer:Customer.first, 
+    product: Product.first,
+    headline: "This product was okay but I had some issues...",
+    content: "I enjoyed using this product but it showed up to my door really late which was really annoying to deal with. I tried to call the seller's number to find out what was going on but no one would ever pick up. It's just good that I finally got it becasue I was about to ask for a refund",
+    rating:2 
+)
+
 puts "I seeded the database!!!"

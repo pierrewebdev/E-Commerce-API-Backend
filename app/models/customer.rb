@@ -2,6 +2,7 @@ class Customer < ApplicationRecord
     has_secure_password
 
     has_many :carts
+    has_many :reviews
 
     def current_cart
         cart = self.carts.find_or_create_by(checked_out:false)

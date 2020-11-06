@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   #routes for cart_products controller
   post "/cart_products", to: "cart_products#create"
   delete "delete-from-cart", to: "cart_products#delete"
+
+  #route to create new charges in stripe api
+  post "/create-charge", to: "charges#create"
 end
