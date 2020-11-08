@@ -20,4 +20,7 @@ Rails.application.routes.draw do
 
   #route to create new charges in stripe api
   post "/create-charge", to: "charges#create"
+
+  #routes for reviews controller
+  post "/reviews", to: "reviews#create"
 end
