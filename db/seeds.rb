@@ -59,7 +59,7 @@ product_one_review1 = Review.create(
 
 product_one_review2 = Review.create(
     customer:Customer.first, 
-    product: Product.first,
+    product: Product.second,
     headline: "This product was okay but I had some issues...",
     content: "I enjoyed using this product but it showed up to my door really late which was really annoying to deal with. I tried to call the seller's number to find out what was going on but no one would ever pick up. It's just good that I finally got it becasue I was about to ask for a refund",
     rating:2 
