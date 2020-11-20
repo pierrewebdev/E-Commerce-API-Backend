@@ -13,8 +13,12 @@ class CartsController < ApplicationController
         cart_id = params[:cartId]
         Cart.find(cart_id).update(checked_out:true)
 
+        #send email out with ruby action mailer
+        CartMailer.send_order_details(@customer, Cart.find(cart_id)).deliver_now
+
         new_cart = Cart.create(customer:@customer,checked_out:false,save_for_later:false)
         past_carts = @customer.past_carts
         render json:{new_cart:CartSerializer.new(new_cart),past_carts:past_carts}
+
     end
 end

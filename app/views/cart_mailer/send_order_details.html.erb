@@ -1,0 +1,16 @@
+<h1>Hello <%= @customer.name%></h1>
+
+<h2>A big thanks from our Team at the Health and Fit Store</h2>
+
+<p>We want to thank you for allowing us to contribute to your awesome fitness journey</p>
+<p> Please be on the look out because one of our customer service specialists will be reaching out to you in a few days to see how you like our order</p>
+
+<h2 style = "font-weight:bold"> Your Order Details </h2>
+<ul>
+<% @cart_info.each do |product| %>
+<li style = "list-style-type:none; display:block">
+   <strong><h3><%=product[:name] %></h3></strong>
+   <img style = "width:auto; height:250px" src = <%= product[:image]%> alt = "Product from Health and Fit Store">
+</li>
+<% end %>
+</ul>

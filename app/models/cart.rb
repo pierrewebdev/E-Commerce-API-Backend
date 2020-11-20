@@ -5,8 +5,8 @@ class Cart < ApplicationRecord
   has_many :products, through: :cart_products
 
   def serialized_products
-    products = self.products
-    products.map{|product| ProductSerializer.new(product)}
+    products = self.cart_products
+    products.map{|product| CartProductSerializer.new(product)}
   end
 
   def total_price
