@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   #routes for cart_products controller
   post "/cart_products", to: "cart_products#create"
   patch "/increment-quantity", to: "cart_products#increase_quantity"
+  patch "/decrement-quantity", to: "cart_products#decrease_quantity"
   delete "delete-from-cart", to: "cart_products#delete"
 
 

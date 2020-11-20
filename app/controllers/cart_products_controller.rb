@@ -18,6 +18,14 @@ class CartProductsController < ApplicationController
         render json: cart_product_to_update
     end
 
+    def decrease_quantity
+        cart_product_to_update = cart_product_to_update = CartProduct.find_by(product:params[:productId],cart:params[:cartId])
+
+        cart_product_to_update.update(quantity:cart_product_to_update.quantity - 1) 
+
+        render json: cart_product_to_update
+    end
+
     def delete
         #need the product id and the cart id
         product_to_delete = CartProduct.find_by(cart_id:params[:cartId],product_id:params[:productId])
