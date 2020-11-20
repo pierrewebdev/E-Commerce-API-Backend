@@ -9,10 +9,6 @@ class Cart < ApplicationRecord
     products.map{|product| CartProductSerializer.new(product)}
   end
 
-  def total_price
-    self.products.sum(:price)
-  end
-
   def nice_timestamp
     self.updated_at.strftime("%b #{updated_at.day.ordinalize} %Y")
   end
