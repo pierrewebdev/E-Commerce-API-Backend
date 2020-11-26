@@ -22,7 +22,7 @@ Product.reset_pk_sequence
 require "csv"
 
 def parse_data
-    csv_data = CSV.read("/Users/patrickpierre/Development/code/personal_projects/health-and-fit-ecom/health_and_fit_api/db/health-and-fitness-ecomm-data.csv")
+    csv_data = CSV.read("db/health-and-fitness-ecomm-data.csv")
     csv_data.shift
     # iterate over each element and send back a hash 
     # need to shift again at the beginning to get rid of id on the row
