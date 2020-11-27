@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  #route to make sure app has been deployed to heroku properly
-  get "/", to: "system#heroku_check"
   #routes for customer controller
   post "/login", to: "customers#login"
   post "/register", to: "customers#register"
