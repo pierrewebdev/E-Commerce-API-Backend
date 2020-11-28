@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://pierrewebdev.github.io/health-and-fit-store'
+    origins 'https://pierrewebdev.github.io/health-and-fit-store/#/'
 
     resource '*',
       headers: :any,
