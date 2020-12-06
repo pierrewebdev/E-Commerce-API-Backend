@@ -10,7 +10,6 @@ class CustomersController < ApplicationController
         email = permit_login[:email]
         password = permit_login[:password]
         customer = Customer.find_by(email:email)
-        byebug
         if customer && customer.authenticate(password)
             customer_token = encode_token({customer_id:customer.id})
             render json: {customer_info:CustomerSerializer.new(customer),token:customer_token}
