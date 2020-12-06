@@ -1,5 +1,5 @@
 class CartProductsController < ApplicationController
-    # before_action :authorized, only: [:create,:delete]
+    before_action :authorized, only: [:create,:delete]
     def create
        #will be receiving token in fetch request
         #use the of the current cart and the product id passed in by the post request
